@@ -4,7 +4,6 @@
 #define QXLSX_CHART_H
 
 #include <QtGlobal>
-#include <QSharedPointer>
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 
@@ -50,8 +49,8 @@ public:
     void setChartLegend(Chart::ChartAxisPos legendPos, bool overlap = false);
     void setGridlinesEnable(bool majorGridlinesEnable = false, bool minorGridlinesEnable = false);
 public:
-    bool loadFromXmlFile(QIODevice *device);
-    void saveToXmlFile(QIODevice *device) const;
+    bool loadFromXmlFile(QIODevice *device) override;
+    void saveToXmlFile(QIODevice *device) const override;
 };
 
 QT_END_NAMESPACE_XLSX
